@@ -17,14 +17,43 @@ jobs:
       run: sudo apt-get install gcc
 
     - name: Compile and run C program
-      run: gcc -o main main.c && ./main
+      run: gcc -o rectangle_perimeter rectangle_perimeter.c
 
-    - name: Verify output
+    - name: Run program with input (test case 1)
       run: |
-        if [ "$(./main)" = "Xin chào các bạn" ]; then
-          echo "Output is correct"
-          exit 0
+        height=5
+        width=10
+        output=$(./rectangle_perimeter $height $width)
+        expected_output=30
+        if [ "$output" = "$expected_output" ]; then
+          echo "Test case 1 passed: Perimeter calculation is correct"
         else
-          echo "Output is incorrect"
+          echo "Test case 1 failed: Perimeter calculation is incorrect"
+          exit 1
+        fi
+
+    - name: Run program with input (test case 2)
+      run: |
+        height=3
+        width=7
+        output=$(./rectangle_perimeter $height $width)
+        expected_output=20
+        if [ "$output" = "$expected_output" ]; then
+          echo "Test case 2 passed: Perimeter calculation is correct"
+        else
+          echo "Test case 2 failed: Perimeter calculation is incorrect"
+          exit 1
+        fi
+
+    - name: Run program with input (test case 3)
+      run: |
+        height=0
+        width=0
+        output=$(./rectangle_perimeter $height $width)
+        expected_output=0
+        if [ "$output" = "$expected_output" ]; then
+          echo "Test case 3 passed: Perimeter calculation is correct"
+        else
+          echo "Test case 3 failed: Perimeter calculation is incorrect"
           exit 1
         fi
