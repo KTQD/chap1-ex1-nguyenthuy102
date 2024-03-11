@@ -4,9 +4,11 @@ int main() {
     float height, width, perimeter;
 
     // Input height of the rectangle
+     printf("Input the height of the Rectangle : ");
     scanf("%f", &height);
 
     // Input width of the rectangle
+    printf("Input the width of the Rectangle : ");
     scanf("%f", &width);
 
     // Calculate perimeter
