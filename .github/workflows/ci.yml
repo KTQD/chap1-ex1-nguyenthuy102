@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get install gcc
 
     - name: Compile C program
-      run: gcc -o rectangle_perimeter rectangle_perimeter.c
+      run: gcc -o main main.c
 
     - name: Run program with input from keyboard
       run: |
@@ -31,7 +31,7 @@ jobs:
         
         for test_case in "${test_cases[@]}"; do
           IFS=' ' read -r height width expected_output <<< "$test_case"
-          output=$(echo "$height $width" | ./rectangle_perimeter)
+          output=$(echo "$height $width" | ./main)
           if [ "$output" = "$expected_output" ]; then
             echo "Test case ($height x $width) passed"
           else
