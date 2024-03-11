@@ -4,9 +4,7 @@ int main() {
     int height, width;
 
     // Nhập chiều cao và chiều rộng từ bàn phím
-    printf("Nhập chiều cao của hình chữ nhật: ");
     scanf("%d", &height);
-    printf("Nhập chiều rộng của hình chữ nhật: ");
     scanf("%d", &width);
 
     // Tính chu vi của hình chữ nhật
