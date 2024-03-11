@@ -13,7 +13,7 @@ int main() {
     int perimeter = 2 * (height + width);
 
     // In ra kết quả
-    printf("Chu vi của hình chữ nhật là: %d\n", perimeter);
+    printf("%d", perimeter);
 
     return 0;
 }
