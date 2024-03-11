@@ -21,5 +21,5 @@ jobs:
       run: make check
     - name: make distcheck
       run: make distcheck
-    - name: Print Hello
-      run: echo "Xin chào"
+    - name: Run main.c
+      run: ./main.out | grep "xin chào" # Kiểm tra xem chương trình in ra "xin chào" hay không
