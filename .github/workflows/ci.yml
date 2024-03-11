@@ -13,11 +13,7 @@ jobs:
     - name: Build and test
       run: |
         gcc -o rectangle rectangle.c
-        output=$(./rectangle << EOF
-        5
-        7
-        EOF
-        )
+        output=$(echo -e "5\n7" | ./rectangle)
         echo "$output"
         if [ "$output" == "Perimeter of the Rectangle is : 24.00" ]; then
           echo "Test passed!"
