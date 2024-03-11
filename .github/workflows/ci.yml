@@ -17,11 +17,11 @@ jobs:
       run: sudo apt-get install gcc
 
     - name: Compile and run C program
-      run: gcc -o hello_world hello_world.c && ./hello_world
+      run: gcc -o main main.c && ./main
 
     - name: Verify output
       run: |
-        if [ "$(./hello_world)" = "Xin chào các bạn" ]; then
+        if [ "$(./main)" = "Xin chào các bạn" ]; then
           echo "Output is correct"
           exit 0
         else
