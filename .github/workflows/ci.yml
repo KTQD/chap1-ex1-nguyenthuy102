@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install GCC
+      run: sudo apt-get install gcc
+
+    - name: Compile and run C program
+      run: gcc -o hello_world hello_world.c && ./hello_world
+
+    - name: Verify output
+      run: |
+        if [ "$(./hello_world)" = "Xin chào các bạn" ]; then
+          echo "Output is correct"
+          exit 0
+        else
+          echo "Output is incorrect"
+          exit 1
+        fi
