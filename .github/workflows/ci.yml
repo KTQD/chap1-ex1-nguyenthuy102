@@ -17,13 +17,13 @@ jobs:
       run: sudo apt-get install gcc
 
     - name: Compile and run C program
-      run: gcc -o rectangle_perimeter rectangle_perimeter.c
+      run: gcc -o main main.c
 
     - name: Run program with input (test case 1)
       run: |
         height=5
         width=10
-        output=$(./rectangle_perimeter $height $width)
+        output=$(./main $height $width)
         expected_output=30
         if [ "$output" = "$expected_output" ]; then
           echo "Test case 1 passed: Perimeter calculation is correct"
