@@ -35,6 +35,7 @@ jobs:
           if [ "$output" = "$expected_output" ]; then
             echo "Test case ($height x $width) passed"
           else
+            echo "Output is $output"
             echo "Test case ($height x $width) failed"
             exit 1
           fi
