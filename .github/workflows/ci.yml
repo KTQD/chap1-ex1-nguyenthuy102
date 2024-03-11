@@ -1,23 +1,25 @@
-name: C Program Tests
+name: C/C++ CI
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v2
 
-    - name: Build and test
-      run: |
-        gcc -o rectangle rectangle.c
-        output=$(echo -e "Input the height of the Rectangle : \n5\nInput the width of the Rectangle : \n7" | ./rectangle)
-        echo "$output"
-        if [ "$output" == "Perimeter of the Rectangle is : 24.00" ]; then
-          echo "Test passed!"
-        else
-          echo "Test failed!"
-          exit 1
-        fi
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: ./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
+    - name: Print Hello
+      run: echo "Xin chào"
