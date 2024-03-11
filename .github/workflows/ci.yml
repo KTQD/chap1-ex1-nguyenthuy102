@@ -1,22 +1,18 @@
-name: C Tests
+name: C Program Tests
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
 
-    - name: Set up C environment
-      uses: actions/setup-cxx@v2
-
-    - name: Build the program
-      run: gcc -o rectangle rectangle.c
-
-    - name: Run tests
+    - name: Build and test
       run: |
+        gcc -o rectangle rectangle.c
         ./rectangle << EOF
         5
         7
