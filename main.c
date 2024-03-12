@@ -1,11 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    float height, width, perimeter;
-
-   
-     printf("Xin chào");
-  
-
+    printf("National Economics Univerisity");
     return 0;
 }
