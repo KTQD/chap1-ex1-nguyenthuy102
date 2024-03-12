@@ -12,10 +12,10 @@ jobs:
       
     - name: Check main.c
       run: |
-        if grep -q "Xin chào" main.c; then
-          echo "Test passed: 'Xin chào' found in main.c"
+        if grep -q "National Economics University" main.c; then
+          echo "Passed"
           exit 0
         else
-          echo "Test failed: 'Xin chào' not found in main.c"
+          echo "Failed"
           exit 1
         fi
