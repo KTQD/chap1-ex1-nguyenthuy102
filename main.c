@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    //Write your code here
+    printf("National Economics University") 
     return 0;
 }
